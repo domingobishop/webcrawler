@@ -407,6 +407,7 @@ root.plotData = (selector, data, plot) ->
 texts = [
   {key:"guardian",file:"guardian.csv",name:"The Guardian: https://www.theguardian.com/politics/general-election-2017"}
   {key:"mirror",file:"mirror.csv",name:"Mirror Online: http://www.mirror.co.uk/news/politics/"}
+  {key:"sun",file:"sun.csv",name:"The Sun: https://www.thesun.co.uk/news/election-2017/"}
 
 ]
 

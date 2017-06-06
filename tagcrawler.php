@@ -3,15 +3,19 @@ echo '<h1>tag crawler</h1>';
 
 include_once('simple_html_dom.php');
 
-function crawl_url($target_url, $include = array('politics', 'https://www.theguardian.com', '2017')) {
+function crawl_url(
+    $target_url = 'https://www.theguardian.com/politics/general-election-2017',
+    $include = array('politics', 'https://www.theguardian.com'),
+    $file = 'guardian.csv'
+    ) {
     $meta_data_compiled = '';
+    $temp_url = '';
     $html = new simple_html_dom();
     $html->load_file($target_url);
     foreach($html->find('a') as $a)
     {
         if (    strpos($a->href, $include[0]) !== false &&
             strpos($a->href, $include[1]) !== false &&
-            strpos($a->href, $include[2]) !== false &&
             $a->href !== $target_url
         ) {
             echo $a->href."<br />";
@@ -33,7 +37,7 @@ function crawl_url($target_url, $include = array('politics', 'https://www.thegua
 
     echo $meta_data_output;
 
-    file_put_contents('data/guardian.csv', $meta_data_output);
+    file_put_contents('data/'.$file, $meta_data_output);
 
 }
 
@@ -54,4 +58,10 @@ function get_meta_data( $url ) {
     return $meta_tags;
 }
 
-crawl_url("https://www.theguardian.com/politics/general-election-2017");
+// crawl_url();
+
+crawl_url('http://www.independent.co.uk/topic/general-election-2017',array('politics','http://www.independent.co.uk'),'independent.csv');
+
+// crawl_url('https://www.thesun.co.uk/news/election-2017/',array('news','thesun','https://www.thesun.co.uk'),'sun.csv');
+
+// crawl_url('http://www.mirror.co.uk/news/politics/',array('news','politics','http://www.mirror.co.uk'),'mirror.csv');

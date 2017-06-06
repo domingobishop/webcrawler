@@ -28,15 +28,16 @@
       <select id="text-select">
         <option value="guardian">The Guardian</option>
         <option value="mirror">Mirror Online</option>
+        <option value="sun">The Sun</option>
 
       </select>
     <header>
-    <h2>The most frequently used tags in:</h2>
+    <h2>Frequency of tags used on:</h2>
       <h2 id="book-title"></h2>
     </header>
     <div id="main" role="main">
       <div id="vis"></div>
-      <div id="status"></div>
+
       <div id="controls">
         <h3>Jitter</h3>
         <form id="jitter" oninput="output.value = (jitter_input.value / 200).toFixed(3)" >

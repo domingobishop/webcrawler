@@ -49,7 +49,7 @@ header {
 
 .bubble-node {
   /* fill: #d1e0f3; */
-  fill: #DCE9BE;
+  fill: orange;
 }
 
 .bubble-hover {
@@ -84,6 +84,7 @@ a.bubble-label {
 .bubble-label .bubble-label-value {
   font: 11px sans-serif;
   white-space: nowrap;
+  display: none;
 }
 
 footer p {
