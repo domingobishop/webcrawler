@@ -43,7 +43,7 @@ Bubbles = () ->
   # acts
   # - jitter controls the 'jumpiness'
   #  of the collisions
-  jitter = 0.5
+  jitter = 1
 
   # ---
   # tweaks our dataset to get it into the
@@ -405,7 +405,8 @@ root.plotData = (selector, data, plot) ->
     .call(plot)
 
 texts = [
-  {key:"guardian",file:"guardian.csv",name:"The Guardian"}
+  {key:"guardian",file:"guardian.csv",name:"The Guardian: https://www.theguardian.com/politics/general-election-2017"}
+  {key:"mirror",file:"mirror.csv",name:"Mirror Online: http://www.mirror.co.uk/news/politics/"}
 
 ]
 

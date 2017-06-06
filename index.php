@@ -27,6 +27,7 @@
   <div id="container" class="container">
       <select id="text-select">
         <option value="guardian">The Guardian</option>
+        <option value="mirror">Mirror Online</option>
 
       </select>
     <header>
