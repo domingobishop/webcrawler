@@ -1,78 +1,70 @@
-<?php
-echo '<h1>webcrawler</h1>';
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-include_once('simple_html_dom.php');
+  <title>vis</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-function crawl_url($target_url, $include = array('politics', 'https://www.theguardian.com', '2017')) {
-    $array = array();
-    $html = new simple_html_dom();
-    $html->load_file($target_url);
-    foreach($html->find('a') as $a)
-    {
-        if (    strpos($a->href, $include[0]) !== false &&
-            strpos($a->href, $include[1]) !== false &&
-            strpos($a->href, $include[2]) !== false &&
-            $a->href !== $target_url
-        ) {
-            echo $a->href."<br />";
-            array_push($array, $a->href);
-        }
-    }
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    $meta_data_compiled = array();
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- end CSS-->
 
-    foreach ($array as $i) {
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
 
-        $data = get_meta_data( $i );
+<body>
 
-        array_push($meta_data_compiled, $data);
-        echo '-';
-    }
+  <div id="container" class="container">
+      <select id="text-select">
+        <option value="guardian">The Guardian</option>
 
-    foreach ($meta_data_compiled as $item) {
-        echo '<h3>'.$item[0].'</h3>';
-        echo '<p>'.$item[1].'</p>';
-        echo '<ul>';
-        foreach ($item[2] as $tag) {
-            echo '<li>'.$tag.'</li>';
-        }
-        echo '</ul>';
-    }
-}
+      </select>
+    <header>
+    <h2>The most frequently used tags in:</h2>
+      <h2 id="book-title"></h2>
+    </header>
+    <div id="main" role="main">
+      <div id="vis"></div>
+      <div id="status"></div>
+      <div id="controls">
+        <h3>Jitter</h3>
+        <form id="jitter" oninput="output.value = (jitter_input.value / 200).toFixed(3)" >
+          <input id="jitter_input" type="range" min="0" max="400" value="100" style="width:240px;">
+          <output name="output" for="input">0.5</output>
+        </form>
+      </div>
+    </div>
+    <footer>
+    </footer>
+  </div> <!--! end of #container -->
 
 
-function get_meta_data( $url ) {
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 
-    $meta_data_array = array();
-    $meta_tag_data_array = array();
 
-    $content_html = file_get_contents($url);
-    $html = new DOMDocument();
-    @$html->loadHTML($content_html);
+  <script defer src="js/plugins.js"></script>
+  <script src="js/libs/coffee-script.js"></script>
+  <script src="js/libs/d3.min.js"></script>
+  <script type="text/coffeescript" src="coffee/vis.coffee"></script>
+  <script type="text/javascript">
+  </script>
 
-    foreach( $html->getElementsByTagName('meta') as $meta ) {
-        if( $meta->getAttribute('property')=='og:title') {
-            $meta_title = $meta->getAttribute('content');
-        }
-        if( $meta->getAttribute('property')=='article:tag') {
-            $meta_tags_str = $meta->getAttribute('content');
-        }
-    }
-    if ($meta_tags_str !== '') {
-        $meta_tags = explode(',', $meta_tags_str);
 
-        foreach ($meta_tags as $tag) {
-            if ($tag) {
-                array_push($meta_tag_data_array, $tag);
-            }
-        }
-
-        array_push($meta_data_array, $meta_title);
-        array_push($meta_data_array, $url);
-        array_push($meta_data_array, $meta_tag_data_array);
-
-        return $meta_data_array;
-    }
-}
-
-crawl_url("https://www.theguardian.com/politics/general-election-2017");
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
