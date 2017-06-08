@@ -4,8 +4,8 @@ echo '<h1>tag crawler</h1>';
 include_once('simple_html_dom.php');
 
 function crawl_url(
-    $target_url = 'https://www.theguardian.com/politics/general-election-2017',
-    $include = array('politics', 'https://www.theguardian.com'),
+    $target_url = 'https://www.theguardian.com',
+    $include = array('theguardian', 'https://www.theguardian.com'),
     $file = 'guardian.csv'
     ) {
     $meta_data_compiled = '';
@@ -60,8 +60,6 @@ function get_meta_data( $url ) {
 
 // crawl_url();
 
-crawl_url('http://www.independent.co.uk/topic/general-election-2017',array('politics','http://www.independent.co.uk'),'independent.csv');
+// crawl_url('https://www.thesun.co.uk/',array('news','thesun','https://www.thesun.co.uk'),'sun8jun.csv');
 
-// crawl_url('https://www.thesun.co.uk/news/election-2017/',array('news','thesun','https://www.thesun.co.uk'),'sun.csv');
-
-// crawl_url('http://www.mirror.co.uk/news/politics/',array('news','politics','http://www.mirror.co.uk'),'mirror.csv');
+crawl_url('http://www.mirror.co.uk/news/politics/',array('news','politics','http://www.mirror.co.uk'),'mirror8jun.csv');

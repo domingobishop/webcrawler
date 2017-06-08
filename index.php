@@ -7,9 +7,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>vis</title>
+  <title>UK genpress tag webcrawler and comparison</title>
   <meta name="description" content="">
   <meta name="author" content="">
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="UK press tag webcrawler and comparison" />
+  <meta property="og:description" content="Crawls The Guardian, Mirror Online and The Sun homepages for frequency of tags" />
+  <meta property="og:url" content="http://chrisbishop.me.uk/crawler/" />
+  <meta property="og:image" content="http://chrisbishop.me.uk/crawler/crawler.jpg" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -26,10 +32,12 @@
 
   <div id="container" class="container">
       <select id="text-select">
-        <option value="guardian">The Guardian</option>
-        <option value="mirror">Mirror Online</option>
-        <option value="sun">The Sun</option>
-
+        <option value="guardian7jun">The Guardian 7 Jun</option>
+        <option value="mirror7jun">Mirror Online 7 Jun</option>
+        <option value="sun7jun">The Sun 7 Jun</option>
+        <option value="guardian8jun">The Guardian 8 Jun</option>
+        <option value="mirror8jun">Mirror Online 8 Jun</option>
+        <option value="sun8jun">The Sun 8 Jun</option>
       </select>
     <header>
     <h2>Frequency of tags used on:</h2>
@@ -38,13 +46,13 @@
     <div id="main" role="main">
       <div id="vis"></div>
 
-      <div id="controls">
+      <!--<div id="controls">
         <h3>Jitter</h3>
         <form id="jitter" oninput="output.value = (jitter_input.value / 200).toFixed(3)" >
           <input id="jitter_input" type="range" min="0" max="400" value="100" style="width:240px;">
           <output name="output" for="input">0.5</output>
         </form>
-      </div>
+      </div>-->
     </div>
     <footer>
     </footer>
@@ -61,12 +69,6 @@
   <script type="text/coffeescript" src="coffee/vis.coffee"></script>
   <script type="text/javascript">
   </script>
-
-
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
   
 </body>
 </html>

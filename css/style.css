@@ -7,6 +7,7 @@ a, a:visited {
 }
 
 #container {
+  width: 1240px;
   max-width: 1240px;
   padding: 20px;
 }

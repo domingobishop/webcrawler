@@ -4,7 +4,7 @@ root = exports ? this
 Bubbles = () ->
   # standard variables accessible to
   # the rest of the functions inside Bubbles
-  width = 980
+  width = 1240
   height = 510
   data = []
   node = null
@@ -405,10 +405,12 @@ root.plotData = (selector, data, plot) ->
     .call(plot)
 
 texts = [
-  {key:"guardian",file:"guardian.csv",name:"The Guardian: https://www.theguardian.com/politics/general-election-2017"}
-  {key:"mirror",file:"mirror.csv",name:"Mirror Online: http://www.mirror.co.uk/news/politics/"}
-  {key:"sun",file:"sun.csv",name:"The Sun: https://www.thesun.co.uk/news/election-2017/"}
-
+  {key:"guardian7jun",file:"guardian7jun.csv",name:"The Guardian: https://www.theguardian.com/ (accessed 7 Jun 2017)"}
+  {key:"mirror7jun",file:"mirror7jun.csv",name:"Mirror Online: http://www.mirror.co.uk/ (accessed 7 Jun 2017)"}
+  {key:"sun7jun",file:"sun7jun.csv",name:"The Sun: https://www.thesun.co.uk/ (accessed 7 Jun 2017)"}
+  {key:"guardian8jun",file:"guardian8jun.csv",name:"The Guardian: https://www.theguardian.com/ (accessed 8 Jun 2017)"}
+  {key:"mirror8jun",file:"mirror8jun.csv",name:"Mirror Online: http://www.mirror.co.uk/ (accessed 8 Jun 2017)"}
+  {key:"sun8jun",file:"sun8jun.csv",name:"The Sun: https://www.thesun.co.uk/ (accessed 8 Jun 2017)"}
 ]
 
 # ---
