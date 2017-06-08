@@ -8,8 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>UK genpress tag webcrawler and comparison</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="Crawls The Guardian, Mirror Online and The Sun homepages for frequency of tags">
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="UK press tag webcrawler and comparison" />
@@ -40,19 +39,11 @@
         <option value="sun8jun">The Sun 8 Jun</option>
       </select>
     <header>
-    <h2>Frequency of tags used on:</h2>
+    <h2><small>BETA</small> Frequency of tags used on:</h2>
       <h2 id="book-title"></h2>
     </header>
     <div id="main" role="main">
       <div id="vis"></div>
-
-      <!--<div id="controls">
-        <h3>Jitter</h3>
-        <form id="jitter" oninput="output.value = (jitter_input.value / 200).toFixed(3)" >
-          <input id="jitter_input" type="range" min="0" max="400" value="100" style="width:240px;">
-          <output name="output" for="input">0.5</output>
-        </form>
-      </div>-->
     </div>
     <footer>
     </footer>
