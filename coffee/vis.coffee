@@ -411,6 +411,9 @@ texts = [
   {key:"guardian8jun",file:"guardian8jun.csv",name:"The Guardian: https://www.theguardian.com/ (accessed 8 Jun 2017)"}
   {key:"mirror8jun",file:"mirror8jun.csv",name:"Mirror Online: http://www.mirror.co.uk/ (accessed 8 Jun 2017)"}
   {key:"sun8jun",file:"sun8jun.csv",name:"The Sun: https://www.thesun.co.uk/ (accessed 8 Jun 2017)"}
+  {key:"guardian9jun",file:"guardian9jun.csv",name:"The Guardian: https://www.theguardian.com/ (accessed 9 Jun 2017)"}
+  {key:"mirror9jun",file:"mirror9jun.csv",name:"Mirror Online: http://www.mirror.co.uk/ (accessed 9 Jun 2017)"}
+  {key:"sun9jun",file:"sun9jun.csv",name:"The Sun: https://www.thesun.co.uk/ (accessed 9 Jun 2017)"}
 ]
 
 # ---

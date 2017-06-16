@@ -37,6 +37,9 @@
         <option value="guardian8jun">The Guardian 8 Jun</option>
         <option value="mirror8jun">Mirror Online 8 Jun</option>
         <option value="sun8jun">The Sun 8 Jun</option>
+        <option value="guardian9jun">The Guardian 9 Jun</option>
+        <option value="mirror9jun">Mirror Online 9 Jun</option>
+        <option value="sun9jun">The Sun 9 Jun</option>
       </select>
     <header>
     <h2><small>BETA</small> Frequency of tags used on:</h2>

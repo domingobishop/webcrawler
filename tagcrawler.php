@@ -6,7 +6,7 @@ include_once('simple_html_dom.php');
 function crawl_url(
     $target_url = 'https://www.theguardian.com',
     $include = array('theguardian', 'https://www.theguardian.com'),
-    $file = 'guardian.csv'
+    $file = 'guardian9jun.csv'
     ) {
     $meta_data_compiled = '';
     $temp_url = '';
@@ -60,6 +60,6 @@ function get_meta_data( $url ) {
 
 // crawl_url();
 
-// crawl_url('https://www.thesun.co.uk/',array('news','thesun','https://www.thesun.co.uk'),'sun8jun.csv');
+crawl_url('https://www.thesun.co.uk/',array('news','thesun','https://www.thesun.co.uk'),'sun9jun.csv');
 
-crawl_url('http://www.mirror.co.uk/news/politics/',array('news','politics','http://www.mirror.co.uk'),'mirror8jun.csv');
+// crawl_url('http://www.mirror.co.uk/news/politics/',array('news','politics','http://www.mirror.co.uk'),'mirror9jun.csv');
